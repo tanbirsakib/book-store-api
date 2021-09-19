@@ -3,12 +3,17 @@ const spinnerHandler = (prop) => {
   const spinner = document.getElementById("spinner");
   spinner.style.display = prop;
 };
+const bookShow = (prop)=>{
+  const book = document.getElementById("books");
+  book.classList.add(prop) 
+} 
 //-------- function for taking input and search through api------------//
 const search = () => {
 
   const searchField = document.getElementById("search-field");
   const searchText = searchField.value;
  const bookFound = document.getElementById('book-found')
+ bookShow('hidden')
  bookFound.textContent = '';
   spinnerHandler("block");
   const url = `https://openlibrary.org/search.json?q=${searchText}`;
@@ -23,6 +28,7 @@ const displayBooks = (data) => {
   spinnerHandler("none");
   const books = data.docs;
   const booksDiv = document.getElementById("books");
+  booksDiv.classList.remove('hidden');
   booksDiv.textContent = "";
   books.forEach((book) => {
     //   creating cover page url
