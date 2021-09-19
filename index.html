@@ -1,37 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Store</title>
-      <!-- tailwind css link  -->
-      <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body>
-   <header>
-    <h1 class="text-center text-2xl mt-6 font-semibold text-purple-600">Book Store</h1>
-   </header>
-   <main>
-       
-       <!-- search item section  -->
-       <section>
+    <!-- tailwind css link  -->
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      #spinner {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="text-center text-2xl mt-6 font-semibold text-purple-600">
+        Book Store
+      </h1>
+    </header>
+    <main>
+      <!-- search item section  -->
+      <section>
         <div class="mx-auto w-1/2 flex justify-evenly mt-8">
-            <input id="search-field" class="px-16 py-2 border-2 rounded border-gray-400" type="text" placeholder="Search books">
-            <button onclick="search()" id="search-btn" class="ml-2 bg-purple-700 px-16 py-2 text-1xl font-semibold text-white rounded">Search</button>
+          <input
+            id="search-field"
+            class="px-16 py-2 border-2 rounded border-gray-400"
+            type="text"
+            placeholder="Search books"
+          />
+          <button
+            onclick="search()"
+            id="search-btn"
+            class="
+              ml-2
+              bg-purple-700
+              px-16
+              py-2
+              text-1xl
+              font-semibold
+              text-white
+              rounded
+            "
+          >
+            Search
+          </button>
         </div>
-       </section>
-       <!-- book result info  -->
-       <div id="book-found" class="w-1/4 mx-auto mt-6 border-2 rounded text-xl font-semibold p-2" >
-        <h2 class="text-center text-purple-600 font-semibold">Read Book, Gain Knowledge</h2>
-        </div>
-       <!-- display books  -->
-       <section id="books" class="grid grid-cols-3 gap-4 mx-auto mt-8 w-11/12">
-           
-       </section>
-   </main>
+      </section>
+      <!-- spinner load  -->
+      <div
+        id="spinner"
+        class="flex justify-center w-1/6 mx-auto items-center mt-4"
+      >
+        <div
+          class="
+            animate-spin
+            rounded-full
+            h-32
+            w-32
+            border-t-2 border-b-2 border-purple-500
+          "
+        ></div>
+      </div>
+      <!-- book result info  -->
+      <div
+        id="book-found"
+        class="w-1/4 mx-auto mt-6 border-2 rounded text-xl font-semibold p-2"
+      >
+        <h2 class="text-center text-purple-600 font-semibold">
+          Read Book, Gain Knowledge
+        </h2>
+      </div>
+      <!-- display books  -->
+      <section
+        id="books"
+        class="grid grid-cols-3 gap-4 mx-auto mt-8 w-11/12"
+      ></section>
+    </main>
 
     <!-- script files -->
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
