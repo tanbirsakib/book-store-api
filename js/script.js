@@ -7,6 +7,8 @@ const spinnerHandler = (prop) => {
 const search = () => {
   const searchField = document.getElementById("search-field");
   const searchText = searchField.value;
+ const bookFound = document.getElementById('book-found')
+ bookFound.textContent = '';
   spinnerHandler("block");
   const url = `https://openlibrary.org/search.json?q=${searchText}`;
   searchField.value = "";
@@ -42,7 +44,7 @@ const displayBooks = (data) => {
       publishedYear = "Published Year Unknown";
     }
     const div = document.createElement("div");
-    div.innerHTML = `<div class="p-2 border-2 rounded h-96 border-purple-700">
+    div.innerHTML = `<div class="p-2 h-96 shadow-md">
                             <img class =
                             'w-2/3 h-4/6 mx-auto' src = "${coverUrl}">
                             <h2 class='text-center text-xl font-semibold text-purple-600'>${title}</h2>
