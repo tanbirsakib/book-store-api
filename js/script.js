@@ -5,6 +5,7 @@ const spinnerHandler = (prop) => {
 };
 //-------- function for taking input and search through api------------//
 const search = () => {
+
   const searchField = document.getElementById("search-field");
   const searchText = searchField.value;
  const bookFound = document.getElementById('book-found')
